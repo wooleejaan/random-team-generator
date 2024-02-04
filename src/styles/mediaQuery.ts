@@ -1,23 +1,18 @@
 import { SerializedStyles, css } from '@emotion/react'
-
-const breakPoints = {
-  desktop: 1920,
-  tablet: 1200,
-  mobile: 767,
-}
+import { BREAK_POINTS } from './variables'
 
 /**
  *
  * @use
  * ```js
- * ${MobileStyle(css`
+ * ${inMobile(css`
  * 	font-size: 1.5rem;
  * 	font-weight: 700;
  * `)}
  * ```
  */
-export const MobileStyle = (style: SerializedStyles) => css`
-  @media screen and (max-width: ${breakPoints.mobile}px) {
+export const inMobile = (style: SerializedStyles) => css`
+  @media screen and (max-width: ${BREAK_POINTS.mobile}px) {
     ${style}
   }
 `
@@ -26,14 +21,14 @@ export const MobileStyle = (style: SerializedStyles) => css`
  *
  * @use
  * ```js
- * ${TabletStyle(css`
+ * ${inTablet(css`
  * 	font-size: 1.5rem;
  * 	font-weight: 700;
  * `)}
  * ```
  */
-export const TabletStyle = (style: SerializedStyles) => css`
-  @media screen and (max-width: ${breakPoints.tablet}px) {
+export const inTablet = (style: SerializedStyles) => css`
+  @media screen and (max-width: ${BREAK_POINTS.tablet}px) {
     ${style}
   }
 `
@@ -42,14 +37,14 @@ export const TabletStyle = (style: SerializedStyles) => css`
  *
  * @use
  * ```js
- * ${DesktopStyle(css`
+ * ${inDesktop(css`
  * 	font-size: 1.5rem;
  * 	font-weight: 700;
  * `)}
  * ```
  */
-export const DesktopStyle = (style: SerializedStyles) => css`
-  @media screen and (max-width: ${breakPoints.desktop}px) {
+export const inDesktop = (style: SerializedStyles) => css`
+  @media screen and (max-width: ${BREAK_POINTS.desktop}px) {
     ${style}
   }
 `
