@@ -13,4 +13,13 @@ export default defineConfig({
       { find: '@libs', replacement: resolve(__dirname, 'src/libs') },
     ],
   },
+  build: {
+    rollupOptions: {
+      output: {
+        entryFileNames: 'ranteamgen-[name].js',
+        assetFileNames: 'assets/ranteamgen-[name]-[hash].[ext]',
+        chunkFileNames: 'ranteamgen-[name]-[hash].js',
+      },
+    },
+  },
 })
